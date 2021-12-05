@@ -1,0 +1,58 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.explore = exports.exploreArtists = exports.getTrendingArtists = exports.getTopKeyword = exports.searchByKeyword = exports.getTop100 = exports.getChart = exports.getTopicDetail = exports.getTopics = exports.getLyric = exports.getPlaylistDetail = exports.getPlaylists = exports.getSong = exports.getHome = void 0;
+const axios = require("axios");
+const sha512 = require("js-sha512");
+const PROXY_URL = "https://nct.napdev.workers.dev/";
+const API_URL = "https://beta.nhaccuatui.com/api";
+const API_KEY = "e3afd4b6c89147258a56a641af16cc79";
+const SECRET_KEY = "6847f1a4fc2f4eb6ab13f9084e082ef4";
+const now = String(Date.now());
+const hash = sha512.hmac(SECRET_KEY, now);
+const client = axios.create({
+    baseURL: typeof window === "object" ? PROXY_URL + API_URL : API_URL,
+    params: {
+        a: API_KEY,
+        t: now,
+        s: hash,
+    },
+});
+client.interceptors.response.use((res) => res.data);
+const joinQueryString = (obj) => Object.entries(obj)
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
+    .join("&");
+const getHome = () => client.post("home");
+exports.getHome = getHome;
+const getSong = (songId) => client.post("media/info", joinQueryString({ key: songId, type: "song" }));
+exports.getSong = getSong;
+const getPlaylists = () => client.post("tags");
+exports.getPlaylists = getPlaylists;
+const getPlaylistDetail = (playlistId) => client.post("media/info", joinQueryString({ key: playlistId, type: "playlist" }));
+exports.getPlaylistDetail = getPlaylistDetail;
+const getLyric = (songId) => client.post("lyric", joinQueryString({ key: songId, type: "song" }));
+exports.getLyric = getLyric;
+const getTopics = () => client.post("topic");
+exports.getTopics = getTopics;
+const getTopicDetail = (topicId) => client.post("topic/detail", joinQueryString({ key: topicId }));
+exports.getTopicDetail = getTopicDetail;
+const getChart = ({ category = "nhac-viet", time, }) => client.post("ranking/top20", joinQueryString({
+    category,
+    type: "song",
+    size: 20,
+    week: (time === null || time === void 0 ? void 0 : time.week) || undefined,
+    year: (time === null || time === void 0 ? void 0 : time.year) || undefined,
+}));
+exports.getChart = getChart;
+const getTop100 = (top100Id) => client.post("top100", joinQueryString({ key: top100Id }));
+exports.getTop100 = getTop100;
+const searchByKeyword = (keyword) => client.post("search/all", joinQueryString({ key: keyword }));
+exports.searchByKeyword = searchByKeyword;
+const getTopKeyword = () => client.post("search/topkeyword");
+exports.getTopKeyword = getTopKeyword;
+const getTrendingArtists = () => client.post("ranking/artist", joinQueryString({ size: 10 }));
+exports.getTrendingArtists = getTrendingArtists;
+const exploreArtists = ({ nation = "hot", gender = 1, }) => client.post("artist", joinQueryString({ nation, gender }));
+exports.exploreArtists = exploreArtists;
+const explore = ({ type, key = "moi-hot", page = 1, pageSize = 36, }) => client.post("genre", joinQueryString({ type, key, order: 1, pageIndex: page, pageSize }));
+exports.explore = explore;
+//# sourceMappingURL=index.js.map

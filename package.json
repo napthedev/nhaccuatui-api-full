@@ -1,0 +1,30 @@
+{
+  "name": "nhaccuatui-api-full",
+  "version": "1.0.0",
+  "description": "NhacCuaTui API Full for nodejs and client",
+  "main": "dist/index.js",
+  "types": "dist",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/napthedev/nhaccuatui-api-full.git"
+  },
+  "keywords": [
+    "nct",
+    "nhaccuatui",
+    "nhac cua tui",
+    "api"
+  ],
+  "author": "napthedev",
+  "license": "ISC",
+  "scripts": {
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "js-sha512": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "typescript": "^4.5.2"
+  }
+}
