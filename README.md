@@ -32,10 +32,6 @@ const {
 ES Import
 
 ```javascript
-import NhacCuaTui from "nhaccuatui-api-full";
-
-// or
-
 import {
   getHome,
   getSong,
@@ -44,7 +40,7 @@ import {
 } from "nhaccuatui-api-full";
 ```
 
-> To use this library with **Vite** remember to add this plugin **@originjs/vite-plugin-commonjs**
+> To use this library with **Vite** remember to add this plugin [@originjs/vite-plugin-commonjs](https://www.npmjs.com/package/@originjs/vite-plugin-commonjs)
 
 ## Usage
 
