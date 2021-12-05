@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.explore = exports.exploreArtists = exports.getTrendingArtists = exports.getTopKeyword = exports.searchByKeyword = exports.getTop100 = exports.getChart = exports.getTopicDetail = exports.getTopics = exports.getLyric = exports.getPlaylistDetail = exports.getPlaylists = exports.getSong = exports.getHome = void 0;
+exports.explore = exports.getArtistDetail = exports.exploreArtists = exports.getTrendingArtists = exports.getTopKeyword = exports.searchByKeyword = exports.getTop100 = exports.getChart = exports.getTopicDetail = exports.getTopics = exports.getVideoDetail = exports.getLyric = exports.getPlaylistDetail = exports.getPlaylists = exports.getSong = exports.getHome = void 0;
 const axios = require("axios");
 const sha512 = require("js-sha512");
 const PROXY_URL = "https://nct.napdev.workers.dev/";
@@ -31,6 +31,8 @@ const getPlaylistDetail = (playlistId) => client.post("media/info", joinQueryStr
 exports.getPlaylistDetail = getPlaylistDetail;
 const getLyric = (songId) => client.post("lyric", joinQueryString({ key: songId, type: "song" }));
 exports.getLyric = getLyric;
+const getVideoDetail = (videoId) => client.post("media/info", joinQueryString({ key: videoId, type: "video" }));
+exports.getVideoDetail = getVideoDetail;
 const getTopics = () => client.post("topic");
 exports.getTopics = getTopics;
 const getTopicDetail = (topicId) => client.post("topic/detail", joinQueryString({ key: topicId }));
@@ -53,6 +55,14 @@ const getTrendingArtists = () => client.post("ranking/artist", joinQueryString({
 exports.getTrendingArtists = getTrendingArtists;
 const exploreArtists = ({ nation = "hot", gender = 1, }) => client.post("artist", joinQueryString({ nation, gender }));
 exports.exploreArtists = exploreArtists;
+const getArtistDetail = (artistId) => client.post("artist/detail", joinQueryString({
+    shortLink: artistId,
+    type: "all",
+    size: 20,
+    index: 1,
+    sort: 0,
+}));
+exports.getArtistDetail = getArtistDetail;
 const explore = ({ type, key = "moi-hot", page = 1, pageSize = 36, }) => client.post("genre", joinQueryString({ type, key, order: 1, pageIndex: page, pageSize }));
 exports.explore = explore;
 //# sourceMappingURL=index.js.map

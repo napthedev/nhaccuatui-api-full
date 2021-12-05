@@ -104,7 +104,17 @@ Get the lyric in text and LRC file
 getLyric("SONG_ID");
 ```
 
-### 6. Get Topics
+### 6. Get Video / MV Detail
+
+Get Music Video detail
+Example Link: [https://beta.nhaccuatui.com/video/co-hen-voi-thanh-xuan-monstar.IXTbg1bBelQKh.html](https://beta.nhaccuatui.com/video/co-hen-voi-thanh-xuan-monstar.IXTbg1bBelQKh.html)  
+Then the ID is: IXTbg1bBelQKh
+
+```javascript
+getVideoDetail("VIDEO_ID");
+```
+
+### 7. Get Topics
 
 Get popular topics
 
@@ -112,7 +122,7 @@ Get popular topics
 getTopics();
 ```
 
-### 7. Get Topic Detail
+### 8. Get Topic Detail
 
 Get the topic detail  
 Example Link: [https://beta.nhaccuatui.com/chu-de/hot-v-pop.weiwjycnu.html](https://beta.nhaccuatui.com/chu-de/hot-v-pop.weiwjycnu.html)  
@@ -122,7 +132,7 @@ Then the ID is: weiwjycnu
 getTopicDetail("TOPIC_ID");
 ```
 
-### 8. Get Chart
+### 9. Get Chart
 
 Get Top Songs
 
@@ -143,7 +153,7 @@ getChart({
 })
 ```
 
-### 9. Get Top 100
+### 10. Get Top 100
 
 Get the top 100 song of the playlist
 
@@ -154,7 +164,7 @@ So the ID is: m3liaiy6vVsF
 getTop100("TOP_100_ID");
 ```
 
-### 10. Search by Keyword
+### 11. Search by Keyword
 
 Search songs, playlists, artists,... by keyword
 
@@ -162,7 +172,7 @@ Search songs, playlists, artists,... by keyword
 searchByKeyword("SEARCH_KEYWORD");
 ```
 
-### 11. Get Top Keywords
+### 12. Get Top Keywords
 
 Get top searched keywords
 
@@ -170,7 +180,7 @@ Get top searched keywords
 getTopKeyword();
 ```
 
-### 12. Get trending artists
+### 13. Get trending artists
 
 Get top 10 artists
 
@@ -178,7 +188,7 @@ Get top 10 artists
 getTrendingArtists();
 ```
 
-### 13. Explore artists
+### 14. Explore artists
 
 Parameters
 
@@ -192,7 +202,17 @@ exploreArtists({
 });
 ```
 
-### 14. Explore (Song, Playlist, MV)
+### 15. Get artist Detail
+
+Get one artist detail
+Example Link: [https://beta.nhaccuatui.com/nghe-si-erik.html](https://beta.nhaccuatui.com/nghe-si-erik.html)  
+Then the ID is: erik
+
+```javascript
+getVideoDetail("ARTIST_ID");
+```
+
+### 16. Explore (Song, Playlist, MV)
 
 Parameters
 

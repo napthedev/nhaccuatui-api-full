@@ -45,6 +45,9 @@ export const getPlaylistDetail = (playlistId: string): Promise<any> =>
 export const getLyric = (songId: string): Promise<any> =>
   client.post("lyric", joinQueryString({ key: songId, type: "song" }));
 
+export const getVideoDetail = (videoId: string): Promise<any> =>
+  client.post("media/info", joinQueryString({ key: videoId, type: "video" }));
+
 export const getTopics = (): Promise<any> => client.post("topic");
 
 export const getTopicDetail = (topicId: string): Promise<any> =>
@@ -87,6 +90,18 @@ export const exploreArtists = ({
   nation?: string;
   gender?: number;
 }): Promise<any> => client.post("artist", joinQueryString({ nation, gender }));
+
+export const getArtistDetail = (artistId: string): Promise<any> =>
+  client.post(
+    "artist/detail",
+    joinQueryString({
+      shortLink: artistId,
+      type: "all",
+      size: 20,
+      index: 1,
+      sort: 0,
+    })
+  );
 
 export const explore = ({
   type,

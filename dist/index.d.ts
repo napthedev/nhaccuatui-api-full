@@ -3,6 +3,7 @@ export declare const getSong: (songId: string) => Promise<any>;
 export declare const getPlaylists: () => Promise<any>;
 export declare const getPlaylistDetail: (playlistId: string) => Promise<any>;
 export declare const getLyric: (songId: string) => Promise<any>;
+export declare const getVideoDetail: (videoId: string) => Promise<any>;
 export declare const getTopics: () => Promise<any>;
 export declare const getTopicDetail: (topicId: string) => Promise<any>;
 export declare const getChart: ({ category, time, }: {
@@ -20,6 +21,7 @@ export declare const exploreArtists: ({ nation, gender, }: {
     nation?: string | undefined;
     gender?: number | undefined;
 }) => Promise<any>;
+export declare const getArtistDetail: (artistId: string) => Promise<any>;
 export declare const explore: ({ type, key, page, pageSize, }: {
     type: "song" | "playlist" | "mv";
     key?: string | undefined;
