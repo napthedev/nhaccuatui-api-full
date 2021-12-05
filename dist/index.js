@@ -65,4 +65,22 @@ const getArtistDetail = (artistId) => client.post("artist/detail", joinQueryStri
 exports.getArtistDetail = getArtistDetail;
 const explore = ({ type, key = "moi-hot", page = 1, pageSize = 36, }) => client.post("genre", joinQueryString({ type, key, order: 1, pageIndex: page, pageSize }));
 exports.explore = explore;
+exports.default = {
+    getHome: exports.getHome,
+    getSong: exports.getSong,
+    getPlaylists: exports.getPlaylists,
+    getPlaylistDetail: exports.getPlaylistDetail,
+    getLyric: exports.getLyric,
+    getVideoDetail: exports.getVideoDetail,
+    getTopics: exports.getTopics,
+    getTopicDetail: exports.getTopicDetail,
+    getChart: exports.getChart,
+    getTop100: exports.getTop100,
+    searchByKeyword: exports.searchByKeyword,
+    getTopKeyword: exports.getTopKeyword,
+    getTrendingArtists: exports.getTrendingArtists,
+    exploreArtists: exports.exploreArtists,
+    getArtistDetail: exports.getArtistDetail,
+    explore: exports.explore,
+};
 //# sourceMappingURL=index.js.map

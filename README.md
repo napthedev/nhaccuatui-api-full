@@ -32,6 +32,10 @@ const {
 ES Import
 
 ```javascript
+import NhacCuaTui from "nhaccuatui-api-full";
+
+// or
+
 import {
   getHome,
   getSong,

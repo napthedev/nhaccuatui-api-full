@@ -118,3 +118,22 @@ export const explore = ({
     "genre",
     joinQueryString({ type, key, order: 1, pageIndex: page, pageSize })
   );
+
+export default {
+  getHome,
+  getSong,
+  getPlaylists,
+  getPlaylistDetail,
+  getLyric,
+  getVideoDetail,
+  getTopics,
+  getTopicDetail,
+  getChart,
+  getTop100,
+  searchByKeyword,
+  getTopKeyword,
+  getTrendingArtists,
+  exploreArtists,
+  getArtistDetail,
+  explore,
+};
