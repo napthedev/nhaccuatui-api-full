@@ -53,7 +53,9 @@ const getTopics = () => client.post("topic");
 const getTopicDetail = (topicId) =>
   client.post("topic/detail", joinQueryString({ key: topicId }));
 
-const getChart = ({ category = "nhac-viet", time }) =>
+const getChart = (
+  { category = "nhac-viet", time } = { category: "nhac-viet" }
+) =>
   client.post(
     "ranking/top20",
     joinQueryString({
@@ -76,8 +78,9 @@ const getTopKeyword = () => client.post("search/topkeyword");
 const getTrendingArtists = () =>
   client.post("ranking/artist", joinQueryString({ size: 10 }));
 
-const exploreArtists = ({ nation = "hot", gender = 1 }) =>
-  client.post("artist", joinQueryString({ nation, gender }));
+const exploreArtists = (
+  { nation = "hot", gender = 1 } = { nation: "hot", gender: 1 }
+) => client.post("artist", joinQueryString({ nation, gender }));
 
 const getArtistDetail = (artistId) =>
   client.post(
