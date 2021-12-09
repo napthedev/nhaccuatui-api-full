@@ -148,6 +148,10 @@ Parameters
   - Year: number
 
 ```javascript
+// Use default option
+getChart();
+
+// or custom property
 getChart({
   category: "nhac-viet",
   time: {
@@ -200,6 +204,10 @@ Parameters
 - gender (Optional) - Default: 1 (men)
 
 ```javascript
+// Default options
+exploreArtists();
+
+// Or With options
 exploreArtists({
   nation: "hot",
   gender: 1,
@@ -226,6 +234,12 @@ Parameters
 - pageSize (Optional) - Default: 36
 
 ```javascript
+// Default options
+explore({
+  type: "song", // or "playlist" or "mv"
+});
+
+// With more options
 explore({
   type: "song",
   key: "moi-hot",
@@ -237,3 +251,5 @@ explore({
 ## Summary
 
 🤩✨ If you enjoy using this library, give me a star on Github and share it to your friends. ✨🤩
+
+✅ If you have an error caused by the api, maybe NhacCuaTui has updated. Try to update to the latest version, if not working, submit an Issue on the repository ✅
