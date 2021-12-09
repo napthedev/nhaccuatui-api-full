@@ -53,13 +53,17 @@ export const getTopics = (): Promise<any> => client.post("topic");
 export const getTopicDetail = (topicId: string): Promise<any> =>
   client.post("topic/detail", joinQueryString({ key: topicId }));
 
-export const getChart = ({
-  category = "nhac-viet",
-  time,
-}: {
-  category?: string;
-  time?: { week: number; year: number };
-}): Promise<any> =>
+export const getChart = (
+  {
+    category = "nhac-viet",
+    time,
+  }: {
+    category?: string;
+    time?: { week: number; year: number };
+  } = {
+    category: "nhac-viet",
+  }
+): Promise<any> =>
   client.post(
     "ranking/top20",
     joinQueryString({

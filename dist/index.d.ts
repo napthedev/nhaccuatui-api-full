@@ -6,7 +6,7 @@ export declare const getLyric: (songId: string) => Promise<any>;
 export declare const getVideoDetail: (videoId: string) => Promise<any>;
 export declare const getTopics: () => Promise<any>;
 export declare const getTopicDetail: (topicId: string) => Promise<any>;
-export declare const getChart: ({ category, time, }: {
+export declare const getChart: ({ category, time, }?: {
     category?: string | undefined;
     time?: {
         week: number;
@@ -37,7 +37,7 @@ declare const _default: {
     getVideoDetail: (videoId: string) => Promise<any>;
     getTopics: () => Promise<any>;
     getTopicDetail: (topicId: string) => Promise<any>;
-    getChart: ({ category, time, }: {
+    getChart: ({ category, time, }?: {
         category?: string | undefined;
         time?: {
             week: number;

@@ -37,7 +37,9 @@ const getTopics = () => client.post("topic");
 exports.getTopics = getTopics;
 const getTopicDetail = (topicId) => client.post("topic/detail", joinQueryString({ key: topicId }));
 exports.getTopicDetail = getTopicDetail;
-const getChart = ({ category = "nhac-viet", time, }) => client.post("ranking/top20", joinQueryString({
+const getChart = ({ category = "nhac-viet", time, } = {
+    category: "nhac-viet",
+}) => client.post("ranking/top20", joinQueryString({
     category,
     type: "song",
     size: 20,
