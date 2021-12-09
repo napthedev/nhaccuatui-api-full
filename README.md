@@ -149,12 +149,12 @@ Parameters
 
 ```javascript
 getChart({
-  "nhac-viet", // category
-  {
+  category: "nhac-viet",
+  time: {
     week: 48,
-    year: 2021
-  }
-})
+    year: 2021,
+  },
+});
 ```
 
 ### 10. Get Top 100
@@ -201,8 +201,8 @@ Parameters
 
 ```javascript
 exploreArtists({
-  "hot", // nation
-  1 // gender
+  nation: "hot",
+  gender: 1,
 });
 ```
 
