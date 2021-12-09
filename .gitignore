@@ -1,3 +1,4 @@
 node_modules
 index.html
 bundle.js.LICENSE.txt
+.DS_Store
