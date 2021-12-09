@@ -221,7 +221,7 @@ Example Link: [https://beta.nhaccuatui.com/nghe-si-erik.html](https://beta.nhacc
 Then the ID is: erik
 
 ```javascript
-getVideoDetail("ARTIST_ID");
+getArtistDetail("ARTIST_ID");
 ```
 
 ### 16. Explore (Song, Playlist, MV)

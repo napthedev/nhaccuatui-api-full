@@ -17,7 +17,7 @@ export declare const getTop100: (top100Id: string) => Promise<any>;
 export declare const searchByKeyword: (keyword: string) => Promise<any>;
 export declare const getTopKeyword: () => Promise<any>;
 export declare const getTrendingArtists: () => Promise<any>;
-export declare const exploreArtists: ({ nation, gender, }: {
+export declare const exploreArtists: ({ nation, gender, }?: {
     nation?: string | undefined;
     gender?: number | undefined;
 }) => Promise<any>;
@@ -48,7 +48,7 @@ declare const _default: {
     searchByKeyword: (keyword: string) => Promise<any>;
     getTopKeyword: () => Promise<any>;
     getTrendingArtists: () => Promise<any>;
-    exploreArtists: ({ nation, gender, }: {
+    exploreArtists: ({ nation, gender, }?: {
         nation?: string | undefined;
         gender?: number | undefined;
     }) => Promise<any>;

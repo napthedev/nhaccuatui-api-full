@@ -83,13 +83,15 @@ export const getTopKeyword = (): Promise<any> =>
 export const getTrendingArtists = (): Promise<any> =>
   client.post("ranking/artist", joinQueryString({ size: 10 }));
 
-export const exploreArtists = ({
-  nation = "hot",
-  gender = 1,
-}: {
-  nation?: string;
-  gender?: number;
-}): Promise<any> => client.post("artist", joinQueryString({ nation, gender }));
+export const exploreArtists = (
+  {
+    nation = "hot",
+    gender = 1,
+  }: {
+    nation?: string;
+    gender?: number;
+  } = { nation: "hot", gender: 1 }
+): Promise<any> => client.post("artist", joinQueryString({ nation, gender }));
 
 export const getArtistDetail = (artistId: string): Promise<any> =>
   client.post(

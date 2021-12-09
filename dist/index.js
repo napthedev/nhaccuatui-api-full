@@ -53,7 +53,7 @@ const getTopKeyword = () => client.post("search/topkeyword");
 exports.getTopKeyword = getTopKeyword;
 const getTrendingArtists = () => client.post("ranking/artist", joinQueryString({ size: 10 }));
 exports.getTrendingArtists = getTrendingArtists;
-const exploreArtists = ({ nation = "hot", gender = 1, }) => client.post("artist", joinQueryString({ nation, gender }));
+const exploreArtists = ({ nation = "hot", gender = 1, } = { nation: "hot", gender: 1 }) => client.post("artist", joinQueryString({ nation, gender }));
 exports.exploreArtists = exploreArtists;
 const getArtistDetail = (artistId) => client.post("artist/detail", joinQueryString({
     shortLink: artistId,
