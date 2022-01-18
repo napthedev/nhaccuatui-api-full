@@ -14,9 +14,15 @@ const client = axios.create({
   baseURL: typeof window === "object" ? PROXY_URL + API_URL : API_URL,
   params: {
     a: API_KEY,
-    t: now,
-    s: hash,
   },
+});
+
+client.interceptors.request.use((config) => {
+  const now = String(Date.now());
+  const hash = sha512.hmac(SECRET_KEY, now);
+  config.params.t = now;
+  config.params.s = hash;
+  return config;
 });
 
 client.interceptors.response.use((res) => res.data);
